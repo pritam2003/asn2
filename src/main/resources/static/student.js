@@ -1,19 +1,13 @@
-/**
- * This is the JavaScript file that the main page uses.
- */
 
-// -- Global Variables and Main Code --
-var currentSelectedStudentID = -1 // The ID of the currently selected student
-var allStudents = loadStudentDataFromHTML() // An array of all the students, retrieved from the HTML table
+var currentSelectedStudentID = -1 
+var allStudents = loadStudentDataFromHTML() //
 
 // Draw the rectangles for each student
 allStudents.forEach((student) => {
     drawStudentRectangle(student)
 })
 
-// -- Functions --
-/**
- * Called when the user clicks on a student's Select button.
+led when the user clicks on a student's Select button.
  */
 function selectedStudent(button) {
     currentSelectedStudentID = button.getAttribute("sid")
@@ -21,9 +15,7 @@ function selectedStudent(button) {
     console.log("Current Selected Student ID: ", currentSelectedStudentID)
 }
 
-/**
- * Updates the HTML to reflect the currently selected student.
- */
+
 function updateHtmlAfterSelectingStudent() {
     var editForm = document.querySelector(".edit-selected-student-form")
     // Changes the form's action to be editing the selected student
@@ -39,9 +31,7 @@ function updateHtmlAfterSelectingStudent() {
     })
 }
 
-/**
- * Draws a rectangle for the given student.
- */
+
 function drawStudentRectangle(student) {
     // Create the rectangle
     var rectangle = document.createElement("div")
@@ -65,9 +55,7 @@ function drawStudentRectangle(student) {
     container.appendChild(rectangle)
 }
 
-/**
- * Loads the student data from the HTML table and returns it as an array of objects.
- */
+
 function loadStudentDataFromHTML() {
     var tableRows = document.querySelectorAll("#student-table tbody tr")
     var allStudents = []
